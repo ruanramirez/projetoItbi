@@ -1,0 +1,28 @@
+{
+  "name": "ruanramirez/projetoitbi",
+  "description": "SEMEC - Laudo de avaliação de imóveis",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ruan Ramirez",
+      "email": "ruanramirez01@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Config.php"
+    ]
+  },
+  "require": {
+    "coffeecode/datalayer": "1.1.*",
+    "coffeecode/router": "1.0.*"
+  }
+}
