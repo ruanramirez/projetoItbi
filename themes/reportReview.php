@@ -1,3 +1,4 @@
+<?php $v->layout("_theme.php") ?>
 <div class="container">
     <h2>SEMEC - LAUDO DE AVALIAÇÃO DE IMÓVEIS</h2>
     <p>Formulário de requisição de avaliação:</p>

@@ -1,9 +1,12 @@
 <?php
+define("ROOT", "https://localhost/projetoItbi");
+define("THEMES", __DIR__."/../themes");
+define("SITE", "#ITBI");
 define("DATA_LAYER_CONFIG", [
     "driver" => "mysql",
     "host" => "localhost",
     "port" => "3306",
-    "dbname" => "itbi",
+    "dbname" => "projeto_itbi",
     "username" => "root",
     "passwd" => "",
     "options" => [
@@ -14,4 +17,15 @@ define("DATA_LAYER_CONFIG", [
     ]
 ]);
 
-define("URL_BASE", "https://localhost/projetoItbi");
+/**
+ * @param string|null $uri
+ * @return string
+ */
+function url(string $uri = null): string
+{
+    if ($uri) {
+        return ROOT . "/{$uri}";
+    }
+
+    return ROOT;
+}

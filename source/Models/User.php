@@ -11,6 +11,6 @@ class User extends DataLayer
     public function __construct()
     {
         //string $entity, array $required, string $primary = 'id', bool $timestamps = true
-        parent::__construct("itbi", [], "", true);
+        parent::__construct("users", [], "id", false);
     }
 }

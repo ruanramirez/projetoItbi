@@ -1,10 +1,12 @@
 <?php
 
+session_start();
+
 require __DIR__ . "/vendor/autoload.php";
 
 use CoffeeCode\Router\Router;
 
-$router = new Router(URL_BASE);
+$router = new Router(ROOT);
 
 /*
  * Controllers
@@ -16,9 +18,16 @@ $router->namespace("Source\App");
  * home
  */
 $router->group(null);
-$router->get("/", "Web:home");
-$router->get("/report", "Web:report");
+$router->get("/", "Web:home", "web.home");
+$router->post("/validateLogin", "Web:validateLogin", "web.validateLogin");
+$router->get("/report", "Web:report", "web.report");
 
+
+/*
+ * WEB
+ * register
+ */
+$router->get("/register", "Web:register", "web.register");
 /*
  * ADMIN
  * home
