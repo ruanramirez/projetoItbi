@@ -28,6 +28,8 @@ $router->get("/report", "Web:report", "web.report");
  * register
  */
 $router->get("/register", "Web:register", "web.register");
+$router->post("/validateRegister", "Web:validateRegister", "web.validateRegister");
+
 /*
  * ADMIN
  * home

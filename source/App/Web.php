@@ -39,7 +39,7 @@ class Web
     {
         echo $this->view->render(
             "login", [
-                "title" => "Acesso | " . SITE
+                "title" => "Início | " . SITE
             ]);
     }
 
@@ -47,7 +47,7 @@ class Web
     {
         echo $this->view->render(
             "reportReview",[
-            "title" => "Acesso | " . SITE
+            "title" => "Avaliação de laudos | " . SITE
         ]);
     }
 
@@ -77,6 +77,11 @@ class Web
                 "title" => "Cadastro | " . SITE
             ]
         );
+    }
+
+    public function validateRegister($data):void
+    {
+        $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
     }
 
     public function error($data)
