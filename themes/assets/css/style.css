@@ -1,0 +1,16 @@
+.body {
+    background: #eee;
+}
+.web-div-box{
+    max-width: 24rem;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: .3rem .5rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 1px rgba(0,0,0,0.1);
+}
+
+.form-signin{
+    margin-bottom: 2rem;
+}

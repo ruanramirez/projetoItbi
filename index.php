@@ -1,5 +1,5 @@
 <?php
-
+header("Access-Control-Allow-Origin: *");
 session_start();
 
 require __DIR__ . "/vendor/autoload.php";
@@ -29,6 +29,18 @@ $router->get("/report", "Web:report", "web.report");
  */
 $router->get("/register", "Web:register", "web.register");
 $router->post("/validateRegister", "Web:validateRegister", "web.validateRegister");
+
+/*
+ * WEB
+ * signOut
+ */
+$router->get("/signout", "Web:signOut", "web.signOut");
+
+/*
+ * WEB
+ * painel
+ */
+$router->get("/user", "Web:user", "web.user");
 
 /*
  * ADMIN

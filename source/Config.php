@@ -1,7 +1,7 @@
 <?php
 define("ROOT", "https://localhost/projetoItbi");
 define("THEMES", __DIR__."/../themes");
-define("SITE", "#ITBI");
+define("SITE", "#ProjetoITBI");
 define("DATA_LAYER_CONFIG", [
     "driver" => "mysql",
     "host" => "localhost",

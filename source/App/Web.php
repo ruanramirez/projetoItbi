@@ -37,10 +37,17 @@ class Web
     }
     public function home($data)
     {
-        echo $this->view->render(
-            "login", [
-                "title" => "Início | " . SITE
+        if(!isset($_SESSION['user'])){
+            echo $this->view->render(
+                "login", [
+                "title" => "Acesso | " . SITE
             ]);
+        }else{
+            echo $this->view->render(
+                "user", [
+                "title" => "Painel | " . SITE
+            ]);
+        }
     }
 
     public function report($data)
@@ -56,17 +63,19 @@ class Web
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
         $user = (new User())->find('email = :email AND password = :psw',
             "email={$data['email']}&psw={$data['password']}")->fetch();
+
         if($user){
-            if($user->status == 0){
-                echo 3;
+            if($user->user_status == 2){
+                echo 2;
             } else {
                 $_SESSION['user']['id'] = $user->id;
                 $_SESSION['user']['email'] = $user->email;
                 $_SESSION['user']['name'] = $user->name;
-                $this->router->redirect('web.report');
+
+                echo 1;
             }
-        } else {
-            echo "Este usuário não existe.";
+        }else{
+            echo 3;
         }
     }
 
@@ -82,11 +91,57 @@ class Web
     public function validateRegister($data):void
     {
         $data = filter_var_array($data, FILTER_SANITIZE_STRIPPED);
+
+        if($data["password"] === $data["password_confirm"]){
+            $user = new User();
+            $user->name = $data["name"];
+            $user->password = $data["password"];
+            $user->email = $data["email"];
+            $user->company_number = $data["company_number"];
+            $user->save();
+
+            if($user->fail()){
+                echo json_encode($user->fail()->getMessage());
+            }else{
+                echo 1;
+            }
+        }else{
+            echo 0;
+        }
+    }
+
+    public function user()
+    {
+        $this->userConnect();
+        echo $this->view->render(
+            "user", [
+            "title" => "Painel | " . SITE
+        ]);
+    }
+
+    public function userConnect(): void
+    {
+        if(!$_SESSION["user"]) {
+            $this->router->redirect("web.home");
+        }
+    }
+
+
+    public function signOut(): void
+    {
+        if(isset($_SESSION["user"])){
+            unset($_SESSION["user"]);
+        }
+
+        $this->router->redirect('web.home');
     }
 
     public function error($data)
     {
-        echo "<h1>Web Erro {$data["errcode"]}</h1>";
-        var_dump($data);
+        echo $this->view->render(
+            "error", [
+                "title" => " Erro {$data["errcode"]} | " . SITE
+            ]
+        );
     }
 }
