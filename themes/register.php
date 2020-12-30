@@ -17,7 +17,7 @@
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputState">Cargo</label>
-                        <select name="user_group" id="inputState" class="form-control" required>
+                        <select name="user_type" id="inputState" class="form-control" required>
                             <option selected>Selecione</option>
                             <option value="2">Auditor fiscal</option>
                             <option value="3">Coordenador</option>
@@ -35,7 +35,7 @@
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="inputEmail4">E-mail</label>
-                        <input name="email"type="email" class="form-control" id="inputEmail4" placeholder="example@mail.com" required>
+                        <input name="email"type="email" class="form-control" id="inputEmail4" placeholder="seuemail@mail.com" required>
                     </div>
                     <div class="form-group col-md-3">
                         <label for="inputPassword4">Senha</label>
@@ -47,8 +47,8 @@
                     </div>
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
-                    <button type="submit" class="btn btn-lg btn-primary">Enviar</button>
-                    <button type="reset" class="btn btn-lg btn-white">Cancelar</button>
+                    <button type="submit" class="btn btn-dark">Enviar</button>
+                    <button type="reset" class="btn btn-secondary">Cancelar</button>
                 </div>
             </form>
         </div>

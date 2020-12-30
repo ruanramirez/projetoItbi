@@ -11,7 +11,29 @@
     <?= $v->section("css") ?>
 </head>
 <body class="body">
-<?= $v->section("content"); ?>
+
+    <div class="container-fluid"">
+        <div class="row">
+            <?php if(isset($_SESSION["userLogin"])): ?>
+                <div class="col-2 p-2 d-none d-block"  style="background: #f7f7f7; height: 100vh">
+                    <?= $v->insert("_nav-bar")?>
+                </div>
+
+                <div class="col-10 p-2">
+                    <?= $v->section("content"); ?>
+                </div>
+            <?php
+            else:
+                ?>
+                <div class="col-12">
+                    <?= $v->section("content"); ?>
+                </div>
+            <?php
+            endif; ?>
+        </div>
+    </div>
+
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
