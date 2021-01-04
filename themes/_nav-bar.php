@@ -4,6 +4,10 @@
             <h5 style="color: #070707">Olá, <?= $user->name; ?></h5>
             <p style="color: #070707">Matrícula: <?= $user->company_number;?></p>
         </div>
-        <a href="<?= $router->route("web.signOut"); ?>" class="btn btn-secondary">Sair</a>
+        <div class="container-fluid p-5">
+            <a href="<?= $router->route("web.signOut"); ?>" class="btn btn-secondary">Sair</a>
+            <a href="" class="btn ">Alterar senha</a>
+            <a href="" class="btn ">Alterar dados</a>
+        </div>
     </div>
 <?php endif; ?>

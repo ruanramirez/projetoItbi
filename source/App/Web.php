@@ -89,7 +89,7 @@ class Web
         $_SESSION["userLogin"] = $user->id;
         echo json_encode(["redirect" => $this->router->route("web.user")]);
 
-        //att com giovanni
+        //att
         //$_SESSION["userLogin"]['id'] = $user->id;
         //$_SESSION["userLogin"]['email'] = $user->email;
         //$_SESSION["userLogin"]['name'] = $user->name;
@@ -112,30 +112,34 @@ class Web
         //falta aplicar igual ao validateLogin()
         $empty = array_keys($data, "");
 
+        $validatePassword = ($data["password"] === $data["password_confirm"]);
+
         if($empty){
             echo json_encode(["required" => $empty]);
             exit;
         }
 
-
-
-        if ($data["password"] === $data["password_confirm"]) {
-            $user = new User();
-            $user->name = $data["name"];
-            $user->password = $data["password"];
-            $user->email = $data["email"];
-            $user->company_number = $data["company_number"];
-            $user->user_type = $data["user_type"];
-            $user->save();
-
-            if ($user->fail()) {
-                echo json_encode($user->fail()->getMessage());
-            } else {
-                echo 1;
-            }
-        } else {
-            echo 0;
+        if(!filter_var($data["email"], FILTER_VALIDATE_EMAIL)){
+            echo json_encode(["formatInvalid" =>[
+                "email" => "Formato de email inválido!"
+            ]]);
+            exit;
         }
+
+        if(!$validatePassword){
+            echo json_encode(["registerVal" => "pswError"]);
+            exit;
+        }
+
+        $user = new User();
+        $user->name = $data["name"];
+        $user->password = $data["password"];
+        $user->email = $data["email"];
+        $user->company_number = $data["company_number"];
+        $user->user_type = $data["user_type"];
+        $user->save();
+
+        echo json_encode(["registerVal" => "success"]);
     }
 
     public function user(): void
