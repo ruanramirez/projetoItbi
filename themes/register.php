@@ -14,8 +14,8 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputCity">Matrícula</label>
-                            <input name="company_number" type="number" class="form-control"
-                                   placeholder="123456-7" required>
+                            <input name="company_number" type="text" class="form-control"
+                                   placeholder="123456-7" id="company_number" required>
                             <div class="invalid-feedback"></div>
                         </div>
                         <div class="form-group col-md-6">
@@ -69,6 +69,10 @@
 
 <?php $v->start('scripts') ?>
 <script>
+    $(document).ready(function () {
+        $("#company_number").mask("000000-0");
+    });
+
     $(".form-register").on('submit', function (e) {
         e.preventDefault();
         //armazena o forulario submetido em _thisForm
