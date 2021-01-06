@@ -1,3 +1,6 @@
+:root{
+    font-size: 20px;
+}
 .body {
     background: #eee;
 }
@@ -11,6 +14,24 @@
     box-shadow: 0 0 2px 1px rgba(0,0,0,0.1);
 }
 
+.web-div-form{
+    max-width: 32rem;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: .5rem .7rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.1);
+}
+
 .form-signin{
     margin-bottom: 2rem;
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+

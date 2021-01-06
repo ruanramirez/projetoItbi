@@ -156,10 +156,12 @@ class Web
         ]);
     }
 
-    public function forgot(): void
+    public function modifyPassword(): void
     {
-        echo $this->view->render("forgot",[
-            "title" => "Esqueci a senha | " . SITE
+        $user = User::auth();
+        echo $this->view->render("modifyPassword",[
+            "title" => "Alterar senha | " . SITE,
+            "user" => $user
         ]);
     }
 

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite22351e6d2aa833fdc5c125cebd5d0a4
+class ComposerStaticInit724d58a1194aa7522609e855955ad4b6
 {
     public static $files = array (
         'e471bf351add62873bc0289ccd6a937f' => __DIR__ . '/..' . '/league/plates/src/Template/match.php',
@@ -15,13 +15,12 @@ class ComposerStaticInite22351e6d2aa833fdc5c125cebd5d0a4
         'bdc465a053da7f7ddb072631f6d41d45' => __DIR__ . '/..' . '/league/plates/src/Extension/LayoutSections/layout-sections.php',
         'afa76803f24616d7599be3b7b0846adc' => __DIR__ . '/..' . '/league/plates/src/Extension/Folders/folders.php',
         '16c5be35e32c6cf916d875518b909210' => __DIR__ . '/..' . '/league/plates/src/Util/util.php',
-        '18e41c63ecfc080aba1c7ae709f5b972' => __DIR__ . '/../..' . '/source/Config.php',
+        '0a2305bf71ae976768be6810f7be97d7' => __DIR__ . '/../..' . '/source/Config.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'Svg\\' => 4,
             'Source\\' => 7,
         ),
         'P' => 
@@ -32,14 +31,6 @@ class ComposerStaticInite22351e6d2aa833fdc5c125cebd5d0a4
         array (
             'League\\Plates\\' => 14,
         ),
-        'F' => 
-        array (
-            'FontLib\\' => 8,
-        ),
-        'D' => 
-        array (
-            'Dompdf\\' => 7,
-        ),
         'C' => 
         array (
             'CoffeeCode\\Router\\' => 18,
@@ -48,10 +39,6 @@ class ComposerStaticInite22351e6d2aa833fdc5c125cebd5d0a4
     );
 
     public static $prefixDirsPsr4 = array (
-        'Svg\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src/Svg',
-        ),
         'Source\\' => 
         array (
             0 => __DIR__ . '/../..' . '/source',
@@ -64,14 +51,6 @@ class ComposerStaticInite22351e6d2aa833fdc5c125cebd5d0a4
         array (
             0 => __DIR__ . '/..' . '/league/plates/src',
         ),
-        'FontLib\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
-        ),
-        'Dompdf\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
-        ),
         'CoffeeCode\\Router\\' => 
         array (
             0 => __DIR__ . '/..' . '/coffeecode/router/src',
@@ -82,32 +61,11 @@ class ComposerStaticInite22351e6d2aa833fdc5c125cebd5d0a4
         ),
     );
 
-    public static $prefixesPsr0 = array (
-        'S' => 
-        array (
-            'Sabberworm\\CSS' => 
-            array (
-                0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
-            ),
-        ),
-    );
-
-    public static $classMap = array (
-        'Dompdf\\Cpdf' => __DIR__ . '/..' . '/dompdf/dompdf/lib/Cpdf.php',
-        'HTML5_Data' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Data.php',
-        'HTML5_InputStream' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/InputStream.php',
-        'HTML5_Parser' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Parser.php',
-        'HTML5_Tokenizer' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/Tokenizer.php',
-        'HTML5_TreeBuilder' => __DIR__ . '/..' . '/dompdf/dompdf/lib/html5lib/TreeBuilder.php',
-    );
-
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite22351e6d2aa833fdc5c125cebd5d0a4::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite22351e6d2aa833fdc5c125cebd5d0a4::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInite22351e6d2aa833fdc5c125cebd5d0a4::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInite22351e6d2aa833fdc5c125cebd5d0a4::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit724d58a1194aa7522609e855955ad4b6::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit724d58a1194aa7522609e855955ad4b6::$prefixDirsPsr4;
 
         }, null, ClassLoader::class);
     }
