@@ -34,13 +34,19 @@ $router->post("/validateRegister", "Web:validateRegister", "web.validateRegister
  * WEB
  * signOut
  */
-$router->get("/signout", "Web:signOut", "web.signOut");
+$router->get("/signOut", "Web:signOut", "web.signOut");
 
 /*
  * WEB
  * painel
  */
 $router->get("/user", "Web:user", "web.user");
+
+/*
+ * WEB
+ * forgot
+ */
+$router->get("/forgot", "Web:forgot", "web.forgot");
 
 /*
  * ADMIN

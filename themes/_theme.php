@@ -15,7 +15,7 @@
 <div class="container-fluid">
     <div class="row">
         <?php if (isset($_SESSION["userLogin"])): ?>
-            <div class="col-2 p-2 d-none d-block" style="background: #f7f7f7; height: 100vh">
+            <div class="col-2 p-2 d-none d-block bg-dark" style="height: 100vh">
                 <?= $v->insert("_nav-bar") ?>
             </div>
 

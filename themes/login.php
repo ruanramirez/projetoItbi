@@ -1,5 +1,5 @@
 <?php $v->layout("_theme.php"); ?>
-
+<!-- Formulário -->
 <div class="wrapper">
     <div class="container-fluid pt-5">
         <div class="row mt-5 p-4 justify-content-center">
@@ -25,6 +25,9 @@
                                     </div>
                                     <hr>
                                     <a href="<?= $router->route('web.register'); ?>" class="btn btn-secondary btn-block">Cadastrar</a>
+                                    <div class="mt-2">
+                                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter">Esqueci a senha</a>
+                                    </div>
                                 </fieldset>
                             </form>
                     </div>
@@ -34,7 +37,39 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Recuperar senha</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="box-div-info p-5">
+                    <div class="text-center">
+                        <h6>Informe o seu e-mail abaixo para receber as instruções de como criar uma nova senha.</h6>
+                    </div>
+                    <hr>
+                    <div class="mt-2">
+                        <div class="form-group  has-feedback">
+                            <input type="text" class="form-control  input-lg" placeholder="Inserir e-mail">
+                            <span class="form-control-feedback" ></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-dark">Solicitar senha</button>
+            </div>
+        </div>
+    </div>
+</div>
 
+<!-- Scripts-->
 <?php $v->start("scripts"); ?>
     <script>
         $("#form-login").on('submit', function(e){

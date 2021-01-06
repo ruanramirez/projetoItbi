@@ -156,6 +156,13 @@ class Web
         ]);
     }
 
+    public function forgot(): void
+    {
+        echo $this->view->render("forgot",[
+            "title" => "Esqueci a senha | " . SITE
+        ]);
+    }
+
 
     public function signOut(): void
     {
