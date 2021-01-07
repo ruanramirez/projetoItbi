@@ -16,10 +16,11 @@
     <div class="row">
         <?php if (isset($_SESSION["userLogin"])): ?>
             <div class="col-2 p-2 d-none d-block bg-dark" style="height: 100vh">
-                <?= $v->insert("_nav-bar") ?>
+                <?= $v->insert("_side-bar") ?>
+
             </div>
 
-            <div class="col-10 p-2">
+            <div class="col-10 p-0">
                 <?= $v->section("content"); ?>
             </div>
         <?php

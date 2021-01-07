@@ -46,7 +46,7 @@ $router->get("/user", "Web:user", "web.user");
  * WEB
  * forgot
  */
-$router->get("/modifyPassword", "Web:modifyPassword", "web.modifyPassword");
+$router->get("/modify", "Web:modify", "web.modify");
 
 /*
  * ADMIN

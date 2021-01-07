@@ -156,10 +156,10 @@ class Web
         ]);
     }
 
-    public function modifyPassword(): void
+    public function modify(): void
     {
         $user = User::auth();
-        echo $this->view->render("modifyPassword",[
+        echo $this->view->render("modify",[
             "title" => "Alterar senha | " . SITE,
             "user" => $user
         ]);

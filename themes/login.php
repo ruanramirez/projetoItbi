@@ -63,7 +63,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-dark">Solicitar senha</button>
+                <button type="button" class="btn btn-dark">Solicitar instruções</button>
             </div>
         </div>
     </div>
